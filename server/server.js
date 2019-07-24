@@ -1,42 +1,24 @@
 const express = require('express');
 const path = require('path');
-const cluster = require('cluster');
-const numCPUs = require('os').cpus().length;
 
-const isDev = process.env.NODE_ENV !== 'production';
-const PORT = process.env.PORT || 5000;
+const app = express();
 
-// Multi-process to utilize all CPU cores.
-if (!isDev && cluster.isMaster) {
-  console.error(`Node cluster master ${process.pid} is running`);
+// Serve the static files from the React app
+app.use(express.static(path.join(__dirname, 'client/build')));
 
-  // Fork workers.
-  for (let i = 0; i < numCPUs; i++) {
-    cluster.fork();
-  }
+// An api endpoint that returns a short list of items
+app.get('/api/getList', (req,res) => {
+    var list = ["item1", "item2", "item3"];
+    res.json(list);
+    console.log('Sent list of items');
+});
 
-  cluster.on('exit', (worker, code, signal) => {
-    console.error(`Node cluster worker ${worker.process.pid} exited: code ${code}, signal ${signal}`);
-  });
+// Handles any requests that don't match the ones above
+app.get('*', (req,res) =>{
+    res.sendFile(path.join(__dirname+'../client/build/index.html'));
+});
 
-} else {
-  const app = express();
+const port = process.env.PORT || 5000;
+app.listen(port);
 
-  // Priority serve any static files.
-  app.use(express.static(path.resolve(__dirname, '../react-ui/build')));
-
-  // Answer API requests.
-  app.get('/api', function (req, res) {
-    res.set('Content-Type', 'application/json');
-    res.send('{"message":"Hello from the custom server!"}');
-  });
-
-  // All remaining requests return the React app, so it can handle routing.
-  app.get('*', function(request, response) {
-    response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
-  });
-
-  app.listen(PORT, function () {
-    console.error(`Node ${isDev ? 'dev server' : 'cluster worker '+process.pid}: listening on port ${PORT}`);
-  });
-}
+console.log('App is listening on port ' + port);
