@@ -1,0 +1,8 @@
+# we don't want to put all our node dependencies under source control
+node_modules
+
+# this file might get auto-created for you on macOS and we don't need it.
+.DS_Store
+
+# this will be for the react stuff. I'll explain it later.
+react-ui/build

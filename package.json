@@ -1,0 +1,24 @@
+{
+  "name": "CodeLearningCenter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "heroku-postbuild": "cd react-ui/ && npm install --only=dev && npm install && npm run build"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LMarieWalker/CodeLearningCenter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LMarieWalker/CodeLearningCenter/issues"
+  },
+  "homepage": "https://github.com/LMarieWalker/CodeLearningCenter#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
