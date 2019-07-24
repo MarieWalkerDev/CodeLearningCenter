@@ -1,0 +1,70 @@
+.App {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #43AA8B;
+  padding: 10px;
+}
+
+.brand {
+  font-size: 30px;
+  margin: 10px;
+  padding: 5px;
+}
+
+.links-container {
+  font-size: 20px;
+  margin:10px;
+  padding: 10px;
+}
+
+.links {
+  font-size: 20px;
+  margin: 5px;
+  padding: 10px;
+  border: 0.5px solid #254441;
+  background-color: #98D0BF;
+  border-radius: 5px;
+}
+
+
+.image {
+  width: 100%;
+  height: 300px;
+  background-image: url("https://placeimg.com/640/480/tech");
+  background-size: cover;
+}
+
+.header-text {
+  color: white;
+  font-size: 40px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-around;
+}
+
+.video-comp {
+  margin: 30px 30px 30px 90px;
+}
+
+.intro-text {
+  margin: 30px 90px 30px 30px;
+  border: 1px solid #43AA8B;
+  width: 450px;
+  height: 250px;
+  background-color: #98D0BF;
+  border-radius: 5px;
+}
+
+span {
+  width: 320%;
+  height: 300px;
+  padding: 40px 40px 10px 40px;
+  letter-spacing: 1px;
+  text-align: justify;
+}
