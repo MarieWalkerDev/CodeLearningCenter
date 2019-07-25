@@ -1,16 +1,45 @@
 .main-content {
   display: flex;
   justify-content: center;
+  height: 82vh;
 }
 
 .instructions {
   background-color: #152624;
   color: white;
   width: 500px;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .lesson-title {
   padding: 20px;
   font-size: 25px;
   background-color: lightgrey;
+}
+
+h1 {
+  margin: 20px;
+}
+
+p {
+  margin: 30px;
+}
+
+.navbtns {
+  display: flex;
+  justify-content: space-around;
+  /* border-radius: 5px; */
+  /* background-color: lightblue; */
+  padding: 5px;
+}
+
+button {
+  margin: 20px;
+  border-radius: 5px;
+  background-color: lightblue;
+  border: 1px solid lightblue;
 }
