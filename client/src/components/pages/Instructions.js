@@ -17,7 +17,17 @@ class Instructions extends Component {
   getInstructions = () => {
     fetch('/api/getInstructions')
     .then(res => res.json())
-    .then(instructions => this.setState({ instructions }))
+    .then(instructions => {
+      this.setState({ instructions })
+
+      this.props.getInput(
+        this.state.instructions[this.state.count-1].input,
+        this.state.instructions[this.state.count-1].output,
+        this.state.instructions[this.state.count-1].id
+      );
+    })
+
+
   };
 
   handleNextLessonClick = () => {
@@ -50,9 +60,9 @@ class Instructions extends Component {
     };
 
     this.props.getInput(
-      this.state.instructions[this.state.count-1].input,
-      this.state.instructions[this.state.count-1].output,
-      this.state.instructions[this.state.count-1].id
+      this.state.instructions[this.state.count-2].input,
+      this.state.instructions[this.state.count-2].output,
+      this.state.instructions[this.state.count-2].id
     );
   };
 
@@ -61,7 +71,7 @@ class Instructions extends Component {
   render() {
     const { instructions } = this.state;
 
-    const isPrevDisabled = this.state.count === 0 ? 'disabled' : '';
+    const isPrevDisabled = this.state.count === 1 ? 'disabled' : '';
 
     const isNextDisabled = this.state.count === this.state.instructions.length ? 'disabled' : '';
 
