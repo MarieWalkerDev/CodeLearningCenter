@@ -2,6 +2,7 @@ import React,{useState, useEffect, useRef} from 'react';
 import Instructions from './Instructions';
 import UserInput from './UserInput';
 import UserOutput from './UserOutput';
+import './Dashboard.css';
 
 
 const Main = (props) => {
@@ -14,12 +15,12 @@ const Main = (props) => {
   console.log(answer)
   useEffect(()=>{
     if (firstUpdate.current) {
-    
+
     return;
   }
   async function passCode(code) {
-    
-    
+
+
     try {
         const response = await fetch(
             `https://api.judge0.com/submissions`,{method:'POST', headers: {
@@ -30,40 +31,40 @@ const Main = (props) => {
         const holder  = await response.json();
         console.log(holder)
         setTimeout(()=>setToken(holder.token),3000)
-        
-       
+
+
     } catch (e) {
         console.error(e);
     }
   };
- 
+
     passCode(code)
-   
+
   },[code])
   useEffect(()=>{
     if (firstUpdate.current) {
     firstUpdate.current = false;
     return;
   }
-  
+
   async function passToken() {
-    
-    
+
+
     try {
         const response = await fetch(
             `https://api.judge0.com/submissions/${token}`
         );
         const holder  = await response.json();
         setAnswer([holder])
-      
-       
+
+
     } catch (e) {
         console.error(e);
     }
   };
- 
+
     passToken(token)
-   
+
   },[token])
   const handleCode=(passedCode)=>{
     let formattedCode=passedCode ;
@@ -79,7 +80,7 @@ const Main = (props) => {
         setOutput(passedOutput)
      }
      //dummy input and output
-     
+
   return (
     <div className="main-content">
       <Instructions getInput={handleInput}/>
