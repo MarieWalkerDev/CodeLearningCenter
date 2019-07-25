@@ -1,4 +1,16 @@
-.main-container {
+.main-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+}
+
+.instructions {
+  background-color: #152624;
+  color: white;
+  width: 500px;
+}
+
+.lesson-title {
+  padding: 20px;
+  font-size: 25px;
+  background-color: lightgrey;
 }

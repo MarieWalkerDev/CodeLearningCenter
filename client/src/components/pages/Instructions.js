@@ -1,4 +1,10 @@
 import React, { Component } from 'react';
+import './Dashboard.css';
+
+
+//  getInput(input, output)
+// takes two parameter
+
 
 class Instructions extends Component {
   // Initialize the state
@@ -24,30 +30,52 @@ class Instructions extends Component {
   render() {
     const { instructions } = this.state;
 
+    let count = 0;
+
     return (
-      <div className="App">
-        <h1>Instructions</h1>
-        {/* Check to see if any items are found*/}
-        {instructions.length ? (
-          <div>
-            {/* Render the instructions of items */}
-            {instructions.map((item) => {
-              return(
-                <div>
-                  {item}
-                </div>
-              );
-            })}
-          </div>
-        ) : (
-          <div>
-            <h2>No Instructions Found</h2>
-          </div>
-        )
-      }
+      <div className="instructions">
+        <div>
+          <div className='lesson-title'>
+            <i className='book icon'></i> Instructions
+            </div>
+
+            {/* Check to see if any items are found*/}
+            {instructions.length ? (
+              <div>
+                {/* Render the instructions of items */}
+                {count++}
+                  return(
+                    <div key={instructions[count].lesson}>
+                      {instructions[count].lesson}
+                      {instructions[count].description}
+                    </div>
+                  );
+
+
+
+
+              </div>
+            ) : (
+              <div>
+                <h2>No Instructions Found</h2>
+              </div>
+            )
+          }
+        </div>
       </div>
     );
   }
 }
 
 export default Instructions;
+
+
+// {instructions.map((item) => {
+//
+//   return(
+//     <div key={item.lesson}>
+//       {item.lesson}
+//       {item.description}
+//     </div>
+//   );
+// })}
