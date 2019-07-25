@@ -42,12 +42,12 @@ console.log(props.output)
       context.beginPath();
       context.fillText("Code Learning ", 100,100)}
     else {
-      if(props.output.status.description==="Accepted"){
-      context.clearRect(0,0, 300,300);
-      context.beginPath();
+    //   if(props.output.status.description==="Accepted"){
+    //   context.clearRect(0,0, 300,300);
+    //   context.beginPath();
      
-    context.fillText("Hello World ", 100,100)
-      }
+    // context.fillText("Hello World ", 100,100)
+    //   }
     }
     break;
     case 2:
@@ -64,7 +64,23 @@ console.log(props.output)
   
   break;
   default: {
-
+    
+    context.font = "30px Comic Sans MS";
+    context.fillStyle="red";
+    context.textAlign ="center";
+    if(!props.output){ 
+     
+    context.clearRect(0,0, 300,300);
+    context.beginPath();
+    context.fillText("I Love JavaScript", 100,100)}
+  else {              
+    if(props.output.status.description==="Accepted"){
+    context.clearRect(0,0, 300,300);
+    context.beginPath();
+   
+  context.fillText("Congratulations ", 100,100)
+    }
+  }
   }
   }
    
