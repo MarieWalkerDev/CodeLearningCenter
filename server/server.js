@@ -11,36 +11,36 @@ app.get('/api/getInstructions', (req,res) => {
     const instructions = [
       {
         "id": 1,
-        "lesson": "Why React?",
+        "lesson": "Console",
         "description": [
-          "React.js is a JavaScript library.",
-          "It was developed by engineers at Facebook. Here are just a few of the reasons why people choose to program with React: React is fast. Apps made in React can handle complex updates and still feel quick and responsive. React is modular. Instead of writing large, dense files of code, you can write many smaller, reusable files.",
-          "React’s modularity can be a beautiful solution to JavaScript’s maintainability problems. React is scalable. Large programs that display a lot of changing data are where React performs best.\nThe Codecademy React courses are not a high-level overview. They are a deep dive. Take your time! By the end, you will be ready to program in React with a real understanding of what you’re doing."
+          "The console is a panel that displays important messages, like errors, for developers. Much of the work the computer does with our code is invisible to us by default. If we want to see things appear on our screen, we can print, or log, to our console directly.",
+          "In JavaScript, the console keyword refers to an object, a collection of data and actions, that we can use in our code. One action, or method, that is built into the console object is the .log() method. When we write console.log() what we put inside the parentheses will get printed, or logged, to the console.",
+          "On the right type 'console.log(\"Hello World\")' or 'console.log(\"World\")' to see the value printed to the console."
         ],
         "input": "World",
         "output": "Hello World\n",
       },
       {
         "id": 2,
-        "lesson": "Hello World",
+        "lesson": "Contitionals - if statement",
         "description": [
-          "What kind of weird hybrid code is that? Is it JavaScript? HTML? Or something else?",
-          "It seems like it must be JavaScript, since it starts with const and ends with ;. If you tried to run that in an HTML file, it wouldn’t work.",
-          "However, the code also contains <h1>Hello world</h1>, which looks exactly like HTML. That part wouldn’t work if you tried to run it in a JavaScript file. What’s going on?"
+          "We often perform a task based on a condition. For example, if the weather is nice today, then we will go outside. If the alarm clock rings, then we’ll shut it off. If we’re tired, then we’ll go to sleep.",
+          "In programming, we can also perform a task based on a condition using an if statement: 'if (ball === red) { console.log('Red Ball')}' ",
+          "In this exercise you have two variables named 'ball' and 'bounce' and if the input is 'bounce' then the ball will 'bounce'. Try it out, enter 'if (line === \"ball\") {console.log(\"bounce\")}'."
         ],
         "input": "ball",
         "output": "bounce\n",
       },
       {
         "id": 3,
-        "lesson": "The Mystery, Revealed",
+        "lesson": "Array Property",
         "description": [
-          "Good! Take another look at the line of code that you wrote.",
-          "Does this code belong in a JavaScript file, an HTML file, or somewhere else? The answer is…a JavaScript file! Despite what it looks like, your code doesn’t actually contain any HTML at all.",
-          "The part that looks like HTML, <h1>Hello world</h1>, is something called JSX. Click Next to learn about JSX."
+          "The length property of an array returns the length of an array (the number of array elements). The length property is always one more than the highest array index.",
+          "Example: let fruits = [\"Banans\", \"Orange\", \"Apple\", \"Mango\"]; console.log(fruites.length); will output 4",
+          "The length property treats strings the same as arrays. Try logging \"I Love JavaScript\" with the length property to test this."
         ],
-        "input": "I Love React",
-        "output": "12\n",
+        "input": "I Love JavaScript",
+        "output": "17\n",
       }
     ];
     res.json(instructions);
