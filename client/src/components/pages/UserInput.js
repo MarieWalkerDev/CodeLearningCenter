@@ -1,7 +1,8 @@
-import React from 'react';
+import React ,{useState} from 'react';
 
 const UserInput = (props) => {
-  const lines=`var readline = require('readline');
+  
+  const [lines, setLines]=useState(`var readline = require('readline');
   var rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -11,8 +12,12 @@ const UserInput = (props) => {
   rl.on('line', function(line){
   //your code here
   console.log('hello, ', line)
-  })`;
+  })`);
 
+  const onChange=(e)=>{
+setLines(e.target.value)
+console.log(lines)
+  }
   const handleSubmit=(e)=>
   {
     e.preventDefault();
@@ -26,7 +31,7 @@ const UserInput = (props) => {
           <label>Code Area</label>
           <textarea id = "myTextArea"
                   rows = "30"
-                  cols = "60" spellCheck="false" value={lines}></textarea>
+                  cols = "60" spellCheck="false" value={lines} onChange={onChange}></textarea>
         </p>
       </fieldset>
       <input type="submit" value="Submit" />
