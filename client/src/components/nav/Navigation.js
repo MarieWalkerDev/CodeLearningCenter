@@ -8,6 +8,7 @@ const Navigation = (props) => {
         <Link style={{textDecoration:"none", color:"#254441"}} to={'./'}>Code Learning Center</Link>
       </div>
       <div className='links-container'>
+        <button className='ui orange button'><Link to={'./list'}>Dashboard</Link></button>
         <Link style={{color:"#254441"}} className='links' to={'./list'}>Dashboard</Link>
         <Link style={{color:"#254441"}} className='links' to={'./'}>Home</Link>
       </div>
