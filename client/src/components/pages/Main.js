@@ -12,7 +12,8 @@ const Main = (props) => {
   const[output, setOutput]=useState(`hello dubs\n`);
   const[input,setInput]=useState("dubs")
   const firstUpdate = useRef(true);
-  const [lesson, setLesson]=useState(1)
+  const [lesson, setLesson]=useState(1);
+  const [loading, setLoading]=useState(false);
   console.log(answer)
   useEffect(()=>{
     if (firstUpdate.current) {
@@ -20,7 +21,7 @@ const Main = (props) => {
     return;
   }
   async function passCode(code) {
-
+setLoading(true)
 
     try {
         const response = await fetch(
@@ -57,7 +58,7 @@ const Main = (props) => {
         );
         const holder  = await response.json();
         setAnswer([holder])
-
+setLoading(false);
 
     } catch (e) {
         console.error(e);
@@ -76,9 +77,12 @@ const Main = (props) => {
       }
 
      const handleInput=(passedInput, passedOutput, lesson)=> {
-       console.log(handleInput)
+       
         setInput(passedInput)
         setOutput(passedOutput)
+        setLesson(lesson)
+        setAnswer(null)
+        
      }
      //dummy input and output
   
@@ -86,8 +90,8 @@ const Main = (props) => {
   return (
     <div className="main-content">
       <Instructions getInput={handleInput}/>
-      <UserInput handleCode={handleCode}/>
-      <UserOutput lesson={lesson} output={answer} />
+      <UserInput handleCode={handleCode} loading={loading}/>
+      <UserOutput lesson={lesson} loading={loading} output={answer} />
     </div>
   );
 };
