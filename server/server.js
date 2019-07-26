@@ -41,6 +41,18 @@ app.get('/api/getInstructions', (req,res) => {
         ],
         "input": "I Love JavaScript",
         "output": "17\n",
+      },
+      {
+        "id": 4,
+        "lesson": "String Disemvoweling",
+        "description": [
+          "Your boss says he wants to save space in all your email messages by getting rid of the vowels",
+          "Your task is to write a function that takes a string and return a new string with all vowels removed. Use the input in the variable line and output the same string with all the vowels removed"
+        ,
+          "For example, the string \"This boss is the biggest loser LOL!\" would become \"Ths bss s th bggst lsr LL!\"."
+        ],
+        "input": "This boss is the biggest loser LOL!",
+        "output": "Ths bss s th bggst lsr LL!\n",
       }
     ];
     res.json(instructions);

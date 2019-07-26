@@ -21,22 +21,20 @@ if( y<0 || y>300) dy=-dy;
 x+=dx;
 y+=dy;
 }
-function draw17()
+function draw12()
 {
   function wait(){
-    context.clearRect(0,0, 300,300);
-  context.beginPath();
-  context.fillText("17 is correct", 150,150)
-  context.fillStyle="#0000ff";
-  // Draws a circle of radius 20 at the coordinates 100,100 on the canvas
-  context.arc(x,y,20,0,Math.PI*2,true);
-  context.closePath();
-  context.fill();
-  // Boundary Logic
-if( x<0 || x>300) dx=-dx;
-if( y<0 || y>300) dy=-dy;
-x+=dx;
-y+=dy;
+    setTimeout(()=>{ context.beginPath();
+      context.fillStyle="#0000ff";
+      // Draws a circle of radius 20 at the coordinates 100,100 on the canvas
+      context.arc(x,y,20,0,Math.PI*2,true);
+      context.closePath();
+      context.fill();
+      // Boundary Logic
+    x=Math.ceil(Math.random()*300 )
+    x=Math.ceil(Math.random()*300 )
+    x+=dx;
+    y+=dy;},2000)
   }
   for(let i=0; i<13; i++){
 wait();
@@ -50,6 +48,8 @@ console.log(props.output)
 
   useEffect(()=>  {
     context= nameRef.current.getContext('2d');
+  context.width = window.innerWidth;
+  context.height = window.innerHeight;
     switch( props.lesson){
     case 1:
 
@@ -93,8 +93,8 @@ console.log(props.output)
 
   break;
   case 3:
-  context.clearRect(0,0, 300,300);
  
+context.fill();
     if(!props.output){
 
     context.clearRect(0,0, 300,300);
@@ -104,28 +104,10 @@ console.log(props.output)
     if(props.output[0].status.description==="Accepted"){
       context.clearRect(0,0, 300,300);
       context.beginPath();
-      context.fillText("17 is correct", 150,150)
-      var tx=setInterval(draw17,10);
-      setTimeout(()=>clearInterval(tx),5000)}
-      else alert('Try again')
+      context.fillText("12 is correct", 150,150)
+     
     }
-   break; 
-  case 4: context.clearRect(0,0, 300,300);
- 
-  if(!props.output){
-
-  context.clearRect(0,0, 300,300);
-  context.beginPath();
-  context.fillText("Disemvoweling", 150,150)}
-else {
-  if(props.output[0].status.description==="Accepted"){
-    context.clearRect(0,0, 300,300);
-    context.beginPath();
-    context.fillText("Disemvoweled", 150,150)
   }
-    else alert('Try again')
-  }
-  
   break;
   default:{
 
@@ -153,7 +135,7 @@ else {
 
   },[props.output, props.lesson])
   return (
-    <div className="output-container"> <div><canvas ref={nameRef} width="300" height="300">
+    <div className="output-container"> <div><canvas ref={nameRef}>
     </canvas> </div > <div className="output-card"><h2>Program Output</h2>
       <h1>{props.loading ? "LOADING..." : null}</h1>
       <p>{props.output ? props.output[0].stdout: null}</p>
