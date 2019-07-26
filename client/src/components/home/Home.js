@@ -17,7 +17,9 @@ const Home = (props) => {
 
         <Features />
 
-        <Team />
+        <div className='teamdiv'>
+          <Team />
+        </div>
 
       </div>
       <Footer />

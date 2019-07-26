@@ -3,22 +3,23 @@ import React from 'react';
 const Team = (props) => {
   return (
     <div className='teamcards'>
-      <div className="ui link cards teamcards">
+
+      <div className="ui link cards" style={{marginTop:"0"}}>
 
         <div className="card">
-          <div className="image">
+          <div className="image" style={{flexGrow:"0"}}>
             <img src="https://semantic-ui.com/images/avatar2/large/molly.png" />
           </div>
-          <div className="content">
+          <div className="content" style={{flexGrow:"0"}}>
             <div className="header">Marie Walker</div>
             <div className="meta">
-              <div className="date">dev</div>
+              <div className="date">Full Stack JavaScript Developer</div>
             </div>
             <div className="description">
-              Marie is a JavaScript deloper living in Mesa, AZ.
+              Marie is in Mesa, AZ.
             </div>
           </div>
-          <div className="extra content">
+          <div className="extra content" style={{flexGrow:"0"}}>
             <div className="right floated">
               Joined in 2019
             </div>
@@ -28,6 +29,9 @@ const Team = (props) => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="ui link cards" style={{marginTop:"0"}}>
 
         <div className="card">
           <div className="image">
@@ -36,10 +40,10 @@ const Team = (props) => {
           <div className="content">
             <div className="header">Daniel Wilson</div>
             <div className="meta">
-              <a></a>
+              <div className="date">Full Stack Software Developer</div>
             </div>
             <div className="description">
-              Daniel is a Full Stack Software Developer living in Phoenix, AZ.
+              Daniel is in Phoenix, AZ.
             </div>
           </div>
           <div className="extra content">
@@ -54,6 +58,7 @@ const Team = (props) => {
         </div>
 
       </div>
+
     </div>
   );
 };
