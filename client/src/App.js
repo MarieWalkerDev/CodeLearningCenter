@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import Home from './components/home/Home';
 import Dashboard from './components/pages/Dashboard';
+import Ide from './components/idepage/Ide';
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
         <Switch>
           <Route exact path='/' component={Home}/>
           <Route path='/list' component={Dashboard}/>
+          <Route path='/code'  component={Ide}/>
         </Switch>
       </div>
     )
