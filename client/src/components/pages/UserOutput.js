@@ -138,13 +138,15 @@ context.fill();
 
   },[props.output, props.lesson])
   return (
-    <div className="output-container"> <div><canvas ref={nameRef} width="300" height="300">
+    <div className="output-container">  <div className='lesson-title'>
+    <i className='print icon'></i> Output
+    </div><div className="output-grid"><div className="canvas-holder"><p>Graphics Window</p><canvas ref={nameRef} width="300" height="300">
     </canvas> </div > <div className="output-card"><h2>Program Output</h2>
       <h1>{props.loading ? "LOADING..." : null}</h1>
       <p>{props.output ? props.output[0].stdout: null}</p>
       <p>{props.output ? props.output[0].stderr: null}</p>
       </div>
-
+      </div>
     </div>
   );
 };

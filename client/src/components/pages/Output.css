@@ -2,6 +2,22 @@
     padding: 2px 16px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    /* width:100%; */
-    height:300px;
+    width:100%;
+    height:100%;
+    grid-row: 2 ;
+}
+.lesson-title {
+  padding: 20px;
+  font-size: 25px;
+  background-color: lightgrey;
+}
+.output-grid{
+    display:grid;
+    height: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.canvas-holder{
+    
+    grid-row:1;
 }

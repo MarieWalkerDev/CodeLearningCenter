@@ -31,19 +31,21 @@ setLanguage(e.target.value)
     props.handleCode(jsCode,language);
   }
   return (
-    <div className='userinput-content'>
+    <div className='userinput-content'> <div className='lesson-title'>
+    <i className='icon keyboard'></i> Code
+    </div>
      <form onSubmit={handleSubmit}>
        <select name="languages" onChange={listChange}> <option defaultValue="29" value="29">JavaScript</option>{languages.map(lan=>{
       return (<option key ={lan.id} value={lan.id}>{lan.name}</option>
       )})}</select>
       <fieldset>
         <p>
-          <label>Code Area</label>
+          <label>Type you code here!</label>
           <textarea id = "myTextArea"
                  spellCheck="false" value={lines} onChange={onChange}></textarea>
         </p>
       </fieldset>
-      <input disabled={props.loading ? true : false} type="submit" value="Submit" />
+      <input class="form-button" disabled={props.loading ? true : false} type="submit" value="Submit Your Code" />
     </form>
     </div>
   );

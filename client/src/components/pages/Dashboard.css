@@ -22,6 +22,7 @@
   padding: 20px;
   font-size: 25px;
   background-color: lightgrey;
+  border-left: 1px solid black;
 }
 
 h1 {
@@ -49,10 +50,11 @@ button {
 
 .instructions-content {
   /* width: 30%; */
+  
 }
 
 .userinput-content {
-  /* width: 40%; */
+  height:100%;
 }
 
 .useroutput-content {
