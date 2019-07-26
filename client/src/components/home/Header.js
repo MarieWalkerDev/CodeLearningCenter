@@ -4,8 +4,8 @@ import IntroText from './IntroText';
 
 const Header = (props) => {
   return (
-    <div className='image'>
-      <div className='content'>
+    <div className='headerimage'>
+      <div className='contentcard'>
         <Video />
         <IntroText />
       </div>
