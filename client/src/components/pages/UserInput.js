@@ -34,15 +34,15 @@ setLanguage(e.target.value)
     <div className='userinput-content'> <div className='lesson-title'>
     <i className='icon keyboard'></i> Code
     </div>
-     <form onSubmit={handleSubmit}>
+     <form onSubmit={handleSubmit} style={{height:"70vh"}}>
        <select name="languages" onChange={listChange}> <option defaultValue="29" value="29">JavaScript</option>{languages.map(lan=>{
       return (<option key ={lan.id} value={lan.id}>{lan.name}</option>
       )})}</select>
       <fieldset>
         <p>
-          <label>Type you code here!</label>
+          <label>Type your code here!</label>
           <textarea id = "myTextArea"
-                 spellCheck="false" value={lines} onChange={onChange}></textarea>
+                 spellCheck="false" value={lines} style={{height:"66vh"}} onChange={onChange}></textarea>
         </p>
       </fieldset>
       <input class="form-button" disabled={props.loading ? true : false} type="submit" value="Submit Your Code" />
