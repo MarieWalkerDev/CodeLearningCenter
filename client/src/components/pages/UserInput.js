@@ -22,7 +22,7 @@ setLanguage(e.target.value)
       output: process.stdout,
       terminal: false
     });
-   
+
     rl.on('line', function(line){
     //your code here
     ${lines}
@@ -31,10 +31,10 @@ setLanguage(e.target.value)
     props.handleCode(jsCode,language);
   }
   return (
-    <div>
+    <div className='userinput-content'>
      <form onSubmit={handleSubmit}>
        <select name="languages" onChange={listChange}> <option defaultValue="29" value="29">JavaScript</option>{languages.map(lan=>{
-      return (<option key ={lan.id} value={lan.id}>{lan.name}</option> 
+      return (<option key ={lan.id} value={lan.id}>{lan.name}</option>
       )})}</select>
       <fieldset>
         <p>

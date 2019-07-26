@@ -1,13 +1,16 @@
 .main-content {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  height: 82vh;
+  flex-grow: 1;
+  height: 82vh; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .instructions {
   background-color: #152624;
   color: white;
-  width: 500px;
+  /* width: 500px; */
   height: 82vh;
   display: flex;
   flex-direction: column;
@@ -42,4 +45,18 @@ button {
   border-radius: 5px;
   background-color: lightblue;
   border: 1px solid lightblue;
+}
+
+.instructions-content {
+  /* width: 30%; */
+}
+
+.userinput-content {
+  /* width: 40%; */
+}
+
+.useroutput-content {
+  /* width: 600px; */
+  background-color: red;
+  /* flex-grow: 2; */
 }
