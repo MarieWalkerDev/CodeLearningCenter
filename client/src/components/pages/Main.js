@@ -77,21 +77,21 @@ setLoading(false);
       }
 
      const handleInput=(passedInput, passedOutput, lesson)=> {
-       
+
         setInput(passedInput)
         setOutput(passedOutput)
         setLesson(lesson)
         setAnswer(null)
-        
+
      }
      //dummy input and output
-  
+
 
   return (
     <div className="main-content">
-      <Instructions getInput={handleInput}/>
-      <UserInput handleCode={handleCode} loading={loading}/>
-      <UserOutput lesson={lesson} loading={loading} output={answer} />
+      <Instructions className='instructions-content' getInput={handleInput}/>
+      <UserInput className='userinput-content' handleCode={handleCode} loading={loading}/>
+      <UserOutput className='useroutput-content' lesson={lesson} loading={loading} output={answer} />
     </div>
   );
 };
